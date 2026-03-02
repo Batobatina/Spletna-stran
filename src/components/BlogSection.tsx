@@ -4,7 +4,7 @@ const blogs = [
     title: "Kako prepoznati pravi slovenski med?",
     excerpt:
       "Na trgu najdemo veliko medu, a kako ločiti pristnega od ponaredkov? V tem prispevku razkrivamo znake kakovostnega slovenskega medu...",
-    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80",
+    image: "src/assets/med3.jpg",
   },
   {
     date: "28. 01. 2026",
