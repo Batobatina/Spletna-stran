@@ -6,7 +6,7 @@ const blogs = [
     title: "Kako prepoznati pravi slovenski med?",
     excerpt:
       "Na trgu najdemo veliko medu, a kako ločiti pristnega od ponaredkov? V tem prispevku razkrivamo znake kakovostnega slovenskega medu in vam pomagamo izbrati najboljše.",
-    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80",
+    image: "src/assets/med3.jpg",
     content:
       "Slovenski med je prepoznaven po svoji kakovosti in edinstvenih okusih, ki jih določa bogata slovenska narava. Pravi med ima naraven vonj, ki ustreza vrsti — cvetlični diši po travnikih, gozdni pa po smoli in iglavcih. Tekstura pravega medu se s časom spreminja — kristalizacija je naraven pojav in znak kakovosti, ne napake. Pri nakupu bodite pozorni na oznake porekla, certifikate in pridelovalca. Najboljši med kupite neposredno pri čebelarju, kjer lahko preverite pogoje pridelave. Izogibajte se medu brez jasne označbe izvora ali s sumljivo nizko ceno.",
   },
