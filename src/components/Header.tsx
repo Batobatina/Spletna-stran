@@ -1,27 +1,36 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingCart, Search } from "lucide-react";
 
-const navItems = ["Domov", "Trgovina", "Blog", "Naša zgodba"];
+const navItems = [
+  { label: "Domov", path: "/" },
+  { label: "Trgovina", path: "/trgovina" },
+  { label: "Blog", path: "/blog" },
+  { label: "Naša zgodba", path: "/nasa-zgodba" },
+];
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#domov" className="font-display text-xl font-bold text-foreground">
+        <Link to="/" className="font-display text-xl font-bold text-foreground">
           🐝 Med & Sveče Zagorje
-        </a>
+        </Link>
 
         <nav className="hidden gap-8 md:flex">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s/g, "-").replace("š", "s")}`}
-              className="text-sm font-semibold text-uppercase-spaced text-muted-foreground transition-colors hover:text-foreground"
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`text-sm font-semibold text-uppercase-spaced transition-colors hover:text-foreground ${
+                location.pathname === item.path ? "text-foreground underline underline-offset-8" : "text-muted-foreground"
+              }`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </nav>
 
@@ -44,14 +53,16 @@ const Header = () => {
       {open && (
         <nav className="flex flex-col gap-3 border-t border-border bg-card px-6 py-4 md:hidden">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s/g, "-").replace("š", "s")}`}
+            <Link
+              key={item.path}
+              to={item.path}
               onClick={() => setOpen(false)}
-              className="text-sm font-semibold text-uppercase-spaced text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-semibold text-uppercase-spaced transition-colors hover:text-foreground ${
+                location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
+              }`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </nav>
       )}
